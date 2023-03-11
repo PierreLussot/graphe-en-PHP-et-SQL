@@ -52,6 +52,7 @@
             document.getElementById('myChart'),
             config
         );
+        
     </script>
 </body>
 
