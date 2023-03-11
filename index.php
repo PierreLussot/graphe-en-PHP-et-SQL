@@ -11,7 +11,48 @@
 </head>
 
 <body>
- 
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        const labels = [
+            'Janvier',
+            'Fevrier',
+            'Mars',
+            'Avril',
+            'Mais',
+            'Juin',
+            'Juillet',
+            'Aout',
+            'Septembre',
+            'Octobre',
+            'Novembre',
+            'Decembre'
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My first dateset',
+                backgroundColor: 'rgb(255,99,132)',
+                borderColor: 'rgb(255,99,132)',
+                data: [0, 10, 5, 2, 20, 30, 45, 5, 14, 33, 20, 20],
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            option: {}
+        };
+    </script>
+
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
 </body>
 
 </html>
