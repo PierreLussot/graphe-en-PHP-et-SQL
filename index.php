@@ -19,17 +19,18 @@
 
     $connexion = mysqli_connect('localhost', 'root', 'root', 'graphique');
 
-    $req = mysqli_query($connexion, "SELECT moi , numero FROM moi");
+    $req = mysqli_query($connexion, "SELECT * FROM mois");
 
     foreach ($req as $data) {
-        $mois =  $data['moi'];
-        $numeros = $data['mumero'];
+        $mois[] =  $data['moi'];
+        $numero[] =  $data['numero'];
     }
+
 
 
     ?>
     <script>
-        const labels = <?= json_encode($mois) ?>;
+        const labels = <?php echo json_encode($mois); ?>;
 
         const data = {
             labels: labels,
@@ -53,7 +54,7 @@
                     'rgb(153, 102, 255)',
                     'rgb(201, 203, 207)'
                 ],
-                data: <?= json_encode($numeros) ?>,
+                data: <?php echo json_encode($numero); ?>,
             }]
         };
 
